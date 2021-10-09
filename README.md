@@ -54,6 +54,8 @@ Instead of the path to the macaroon and cert files you can also provide the hex 
 * `lnd-cert`: LND TLS cert as HEX string.
 * `lnd-macaroon`: LND macaroon HEX string. (invoice.macaroon is recommended)
 
+To get the HEX of the TLS cert `openssl x509 -in /path/to/tls.cert -text -noout -certopt ca_default -certopt no_validity -certopt no_serial -certopt no_subject -certopt no_extensions -certopt no_signame  | grep -v 'Signature Algorithm' | tr -d '[:space:]:'`
+
 #### Other configuration
 
 * `static-path`: Path to a folder that you want to serve with LnMe (e.g. /home/bitcoin/lnme/website). Use this if you want to customize your ⚡website. default: disabled
